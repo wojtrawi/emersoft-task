@@ -1,0 +1,12 @@
+<app-media-search
+  [searchQuery]="searchQuery$ | async"
+  (search)="onSearch($event)"
+></app-media-search>
+<app-media-toolbar
+  [selectedMediaType]="mediaType$ | async"
+  [sortDir]="sortDir$ | async"
+  (changeMediaType)="onChangeMediaType($event)"
+  (changeSortDir)="onChangeSortDir($event)"
+  (clear)="onClear()"
+></app-media-toolbar>
+<app-media-list [mediaItems]="mediaItemsVM$ | async"></app-media-list>

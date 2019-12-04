@@ -1,0 +1,27 @@
+<div class="d-flex justify-content-between align-items-end border rounded p-3">
+  <div>
+    <label for="media-type">Filter by:</label>
+    <select
+      class="custom-select"
+      id="media-type"
+      [value]="selectedMediaType"
+      (change)="onChangeMediaType($event.target.value)"
+    >
+      <option *ngFor="let option of mediaTypeOptions" [value]="option.value">
+        {{ option.label }}
+      </option>
+    </select>
+  </div>
+
+  <div>
+    <button class="btn btn-danger mr-3" (click)="onClear()">Clear</button>
+    <button class="btn btn-light" (click)="onChangeSortDir()">
+      <ng-container *ngIf="isSortDesc; else ascArrowTpl">
+        &darr;
+      </ng-container>
+      <ng-template #ascArrowTpl>
+        &uarr;
+      </ng-template>
+    </button>
+  </div>
+</div>

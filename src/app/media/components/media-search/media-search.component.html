@@ -1,0 +1,10 @@
+<div class="form-group">
+  <label for="media-search" class="sr-only">Search media by title</label>
+  <input
+    class="form-control"
+    id="media-search"
+    placeholder="Search media by title..."
+    [value]="searchQuery"
+    (input)="onInput($event.target.value)"
+  />
+</div>
